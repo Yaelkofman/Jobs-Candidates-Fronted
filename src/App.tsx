@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { FormAdding } from './components/addingForm';
+import { JobService } from './services/jobService';
+import { CandidateService } from './services/candidateService';
+import GenericTable from './components/table'
+import { ICandidate } from './models/ICandidate';
+import { IJob } from './models/IJob';
+import JobPage from './pages/jobPage';
+import CandidateTable from './pages/candidateTable';
+import Routing from './pages/router';
+import Basic from './components/rating';
+import ChangeRating from './components/rating';
+import Example from './components/showLogo';
 
-function App() {
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routing></Routing>
   );
-}
-
-export default App;
+};
